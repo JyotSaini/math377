@@ -13,18 +13,20 @@ def buildSet(numPairs, numDeceased):
 
         for j in range(1, numPairs + 1):    # Assign quality scores for ever donor recipient pair
             if j is not i:
-                donori[j] = assignQualityScore()
+                donori['r' + str(j)] = assignQualityScore()
+            # else:
+            #     donori['r' + str(j)] = -1
 
-        donors[i] = donori
+        donors['d' + str(i)] = donori
 
     for i in range(numPairs + 1, numPairs + numDeceased + 1):   # Deceased Donors
         donori = {}
         donori['alive'] = False
 
         for j in range(1, numPairs + 1):    # Assign quality scores for ever donor recipient pair
-            donori[j] = assignQualityScore()
+            donori['r' + str(j)] = assignQualityScore()
 
-        donors[i] = donori
+        donors['d' + str(i)] = donori
 
 def main():
     buildSet(6, 2)
