@@ -27,7 +27,7 @@ def buildSet(numPairs, numDeceased):
         donors[i] = donori
 
 def main():
-    buildSet(20, 1)
+    buildSet(6, 2)
 
     with open('donors.json', 'w') as outfile:
         json.dump(donors, outfile, indent=4)
